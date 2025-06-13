@@ -5,9 +5,11 @@ from tensorflow.keras.preprocessing.image import img_to_array
 import tkinter as tk
 from tkinter import Label
 from PIL import Image, ImageTk
+import os
 
 # Load the trained model
-model_path = r"E:\AYE on the road\machine_project.keras"
+# Use a path relative to this script to make the code portable
+model_path = os.path.join(os.path.dirname(__file__), "machine_project.keras")
 print(f"Loading model from: {model_path}")
 model = load_model(model_path)
 print("Model loaded successfully!")
